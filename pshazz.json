@@ -1,0 +1,19 @@
+{
+    "homepage": "https://github.com/watermelonpizza/pshazz",
+    "version": "0.2019.07.24",
+    "url": "https://github.com/watermelonpizza/pshazz/archive/fde9c6c806faa4193980abe488e997754bd4f649.zip",
+    "extract_dir": "pshazz-fde9c6c806faa4193980abe488e997754bd4f649",
+    "bin": "bin\\pshazz.ps1",
+    "installer": {
+        "file": "bin\\install.ps1"
+    },
+    "checkver": {
+        "url": "https://github.com/watermelonpizza/pshazz/commits/master.atom",
+        "re": "(\\d+)-(\\d+)-(\\d+)[\\S\\s]*?(?<sha>[0-9a-f]{40})",
+        "replace": "0.${1}.${2}.${3}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/watermelonpizza/pshazz/archive/$matchSha.zip",
+        "extract_dir": "pshazz-$matchSha"
+    }
+}
